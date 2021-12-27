@@ -9,7 +9,7 @@ df
 # clean up data
 # nedenstående kolonne eksiterer ikke i mit datasæt, så det ar bare for eksemplets skyld
 # pd.to_datetime(df['Published Date']).iloc[:5]
-
+# test
 
 # username = 'Test_UFST_Account' 
 # password = 'TestAccount' 
