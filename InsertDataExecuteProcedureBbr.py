@@ -13,8 +13,19 @@ print(df)
 
 
 ## Step 3.1 Create SQL Servre Connection String
+# localhost\MSSQLSERVER01
 
 # Connect to SQL Server
+# conn = odbc.connect('Driver={SQL Server};'
+#                       'Server=.;'
+#                       'Database=ProdBbrUFST;'
+#                       'Trusted_Connection=yes;')
+# cursor = conn.cursor()
+# conn = odbc.connect('Driver={SQL Server};'
+#                       'Server=.;'
+#                       'Database=PreProdBbrUFST;'
+#                       'Trusted_Connection=yes;')
+# cursor = conn.cursor()
 conn = odbc.connect('Driver={SQL Server};'
                       'Server=.;'
                       'Database=DevBbrUFST;'
@@ -56,15 +67,14 @@ with open('C:\\Users\\JacobHøj-Kristensen\\Desktop\\tSQLt_Bbr_Test_Project\\dat
 
 # without headers
 # with open('C:\\Users\\JacobHøj-Kristensen\\Desktop\\tSQLt_Bbr_Test_Project\\data.csv', 'r') as f:
-#    reader = csv.reader(f)
-# data = next(reader)
-# query = 'insert into MyTable values ({0})'
-# query = query.format(','.join('?' * len(data)))
+#     reader = csv.reader(f)
+#     data = next(reader)
+#     query = 'insert into SourceData values ({0})'
+#     query = query.format(','.join('?' * len(data)))
+#     cursor.execute(query, data)
+#     for data in reader:
+#         cursor.execute(query, data)
 
-# cursor.execute(query, data)
-# for data in reader:
-#    cursor.execute(query, data)
-# cursor.commit()
 
 
 # Execute stored procedure
