@@ -79,7 +79,9 @@ with open('C:\\Users\\JacobHøj-Kristensen\\Desktop\\tSQLt_Bbr_Test_Project\\dat
 
 # Execute stored procedure
 cursor.execute('''
-		EXEC [dbo].[InsertInto_Lag1_Tabeller]
+		EXEC [dbo].[InsertInto_Lag1_Table1]
+        EXEC [dbo].[InsertInto_Lag1_Table2]
+        EXEC [dbo].[InsertInto_Lag1_Table3]
 
         EXEC [dbo].[InsertInto_Lag2_Tabel]
                ''')
