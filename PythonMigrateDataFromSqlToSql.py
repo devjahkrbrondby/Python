@@ -46,11 +46,18 @@ for row_count in range(0, df.shape[0]):
    chunk = df.iloc[row_count:row_count + 1,:].values.tolist()
    tuple_of_tuples = tuple(tuple(x) for x in chunk)
    cursor.executemany("insert into dbo.Lag1_Table1" + " (EmployeeId,Education,Subjects,LenghtOfEducation) values (?,?,?,?)",tuple_of_tuples)
-conn.commit()
-cursor.close()
 
 
-
+try:
+    cursor.commit();    
+except Exception as e:
+    cursor.rollback()
+    print(e)
+    print(str(e[1]))
+finally:
+    print('Task is complete.')
+    cursor.close()
+    conn.close()
       
 
 

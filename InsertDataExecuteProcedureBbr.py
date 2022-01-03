@@ -16,21 +16,21 @@ print(df)
 # localhost\MSSQLSERVER01
 
 # Connect to SQL Server
-conn = odbc.connect('Driver={SQL Server};'
-                      'Server=localhost\MSSQLSERVER01;'
-                      'Database=ProdBbrUFST;'
-                      'Trusted_Connection=yes;')
-cursor = conn.cursor()
 # conn = odbc.connect('Driver={SQL Server};'
-#                       'Server=localhost\MSSQLSERVER01;'
+#                       'Server=.;'
+#                       'Database=ProdBbrUFST;'
+#                       'Trusted_Connection=yes;')
+# cursor = conn.cursor()
+# conn = odbc.connect('Driver={SQL Server};'
+#                       'Server=.;'
 #                       'Database=PreProdBbrUFST;'
 #                       'Trusted_Connection=yes;')
 # cursor = conn.cursor()
-# conn = odbc.connect('Driver={SQL Server};'
-#                       'Server=localhost\MSSQLSERVER01;'
-#                       'Database=DevBbrUFST;'
-#                       'Trusted_Connection=yes;')
-# cursor = conn.cursor()
+conn = odbc.connect('Driver={SQL Server};'
+                      'Server=.;'
+                      'Database=DevBbrUFST;'
+                      'Trusted_Connection=yes;')
+cursor = conn.cursor()
 
 # Create Table
 cursor.execute('''
