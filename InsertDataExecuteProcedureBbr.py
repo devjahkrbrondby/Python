@@ -16,25 +16,25 @@ print(df)
 # localhost\MSSQLSERVER01
 
 # Connect to SQL Server
-conn = odbc.connect('Driver={SQL Server};'
-                      'Server=localhost\MSSQLSERVER01;'
-                      'Database=ProdBbrUFST;'
-                      'Trusted_Connection=yes;')
-cursor = conn.cursor()
+# conn = odbc.connect('Driver={SQL Server};'
+#                       'Server=localhost\MSSQLSERVER01;'
+#                       'Database=ProdBbrUFST;'
+#                       'Trusted_Connection=yes;')
+# cursor = conn.cursor()
 # conn = odbc.connect('Driver={SQL Server};'
 #                       'Server=localhost\MSSQLSERVER01;'
 #                       'Database=PreProdBbrUFST;'
 #                       'Trusted_Connection=yes;')
 # cursor = conn.cursor()
-# conn = odbc.connect('Driver={SQL Server};'
-#                       'Server=localhost\MSSQLSERVER01;'
-#                       'Database=DevBbrUFST;'
-#                       'Trusted_Connection=yes;')
-# cursor = conn.cursor()
+conn = odbc.connect('Driver={SQL Server};'
+                      'Server=localhost\MSSQLSERVER01;'
+                      'Database=DevBbrUFST;'
+                      'Trusted_Connection=yes;')
+cursor = conn.cursor()
 
 # Create Table
 cursor.execute('''
-		drop table [dbo].[SourceData]
+		DROP TABLE [dbo].[SourceData]
 CREATE TABLE [dbo].[SourceData](
 	[ID] [int] IDENTITY(1,1) NOT NULL,
 	[name] [nvarchar](max) NULL,
@@ -45,12 +45,13 @@ CREATE TABLE [dbo].[SourceData](
 	[arealStueplan] [int] NULL,
 	[kommuneNr] [int] NULL,
 	[cprNr] [bigint] NULL,
+	[arealGrund] [int] NULL,
 	[Timestamp] [datetime] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 ALTER TABLE [dbo].[SourceData] ADD  DEFAULT (getdate()) FOR [Timestamp]
                ''')
